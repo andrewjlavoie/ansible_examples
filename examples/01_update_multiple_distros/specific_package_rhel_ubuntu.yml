@@ -1,0 +1,15 @@
+---
+- name: Update All RHEL and Ubuntu
+  hosts: all
+  tasks:
+    - name: Update RHEL
+      yum:
+        name: "{{ package }}"
+        state: "{{ state }}"
+      when: ansible_distribution == 'Red Hat Enterprise Linux'
+
+    - name: Update Ubuntu
+      apt:
+        name: "{{ package }}"
+        state: "{{ state }}"
+      when: ansible_distribution == 'Ubuntu'

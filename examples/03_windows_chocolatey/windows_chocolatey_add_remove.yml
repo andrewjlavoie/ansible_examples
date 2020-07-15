@@ -1,0 +1,9 @@
+---
+- name: "{{ package }}" will be in state {{ state }}
+  hosts: windows
+  gather_facts: false
+  tasks:
+    - name: add/remove package
+      win_chocolatey:
+        name: "{{ package }}"
+        state: "{{ state }}"
