@@ -1,6 +1,6 @@
 ---
 - name: Update All RHEL and Ubuntu
-  hosts: all
+  hosts: test_rhel,ubuntu
   tasks:
     - name: Update RHEL
       yum:
