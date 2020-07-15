@@ -1,5 +1,5 @@
 ---
-- name: "{{ package }}" will be in state {{ state }}
+- name: Application={{ package }} will be in state {{ state }}
   hosts: windows
   gather_facts: false
   tasks:
