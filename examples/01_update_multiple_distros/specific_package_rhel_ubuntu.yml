@@ -1,14 +1,14 @@
 ---
-- name: Update All RHEL and Ubuntu
+- name: Modify application on RHEL and Ubuntu
   hosts: test_rhel,ubuntu
   tasks:
-    - name: Update RHEL
+    - name: Modify application on RHEL
       yum:
         name: "{{ package }}"
         state: "{{ state }}"
       when: ansible_distribution == 'RedHat'
 
-    - name: Update Ubuntu
+    - name: Modify application on Ubuntu
       apt:
         name: "{{ package }}"
         state: "{{ state }}"
